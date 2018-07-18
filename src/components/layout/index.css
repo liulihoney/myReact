@@ -1,0 +1,16 @@
+.layout{
+   /* width:100vw; height:100vh; */
+   position: absolute; left:0; right:0; top:0; bottom:0;
+}
+.tab-bar{
+    position: absolute; left:0; right:0; bottom:0; height:45px; display: flex; align-items:inherit; justify-content: space-around; font-size:16px; border-top:1px solid #ccc;
+}
+.tab-bar>div{
+  flex:1; text-align: center;
+}
+.tab-bar i{
+    display:block; line-height:25px;
+}
+.content{
+    position: absolute; left:0; right:0; top:45px; bottom:45px;
+}

@@ -1,0 +1,35 @@
+import {LoadAsyncCom,Loading} from '../tools/LoadAsyncCom';
+//webpack提供的import方法，该方法能够异步加载组件，返回一个promise；
+//用高阶组件进行封装
+export const config = [
+    {
+        path:'/usermanger',
+        component:LoadAsyncCom(()=>import('../components/usermanger'),Loading)
+    },
+    {
+        path:'/login',
+        component:LoadAsyncCom(()=>import('../components/login'),Loading)
+    },
+    {
+        path:'/layout',
+        component:LoadAsyncCom(()=>import('../components/layout'),Loading),
+        children:[
+            {
+                path:'/home',
+                component:LoadAsyncCom(()=>import('../components/home'),Loading)
+            },
+            {
+                path:'/detail',
+                component:LoadAsyncCom(()=>import('../components/detail'),Loading)
+            },
+            {
+                path:'/submit',
+                component:LoadAsyncCom(()=>import('../components/submit'),Loading)
+            },
+            {
+                path:'/computed',
+                component:LoadAsyncCom(()=>import('../components/computed'),Loading)
+            }
+        ]
+    }
+]
